@@ -27,7 +27,7 @@ class ToDoContainer extends Component {
       null,
       [
         {text: 'Delete', onPress: () => this.deleteItem(rowID)},
-        {text: 'Edit', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+        {text: 'Edit', onPress: () => this.openItem(rowData, rowID)},
         {text: 'Cancel'}
       ],
       { cancelable: false }
