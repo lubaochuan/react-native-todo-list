@@ -1,27 +1,19 @@
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-var ToDoEdit = require('./application/components/ToDoEdit');
-var ToDoList = require('./application/components/ToDoList');
+'use strict';
+import React, {Component} from 'react';
+import {AppRegistry, NavigatorIOS} from 'react-native';
+
+var styles = require('./application/styles/styles');
+var ToDoListContainer = require('./application/components/ToDoListContainer');
 
 class RN_ToDoList extends Component {
   render() {
     return (
-      <ToDoList
-        items={
-          [{txt: 'Read a book', complete: false},
-           {txt: 'Take a walk', complete: true}]}
-        onPressItem={this.openItem}
-        onLongPressItem={this.alertMenu}/>
+      <NavigatorIOS
+        style={styles.navigator}
+        initialRoute={{component: ToDoListContainer, title: 'TO DOs'}}/>
     );
   }
-
-  openItem(){}
-  alertMenu(){}
 }
+
 
 AppRegistry.registerComponent('RN_ToDoList', () => RN_ToDoList);
